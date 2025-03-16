@@ -46,12 +46,18 @@ services:
     image: baptistearno/typebot-builder:latest
     ports:
       - '8080:3000'
+    environment:
+      - GITHUB_CLIENT_ID=your_github_client_id
+      - GITHUB_CLIENT_SECRET=your_github_client_secret  
 
   typebot-viewer:
     <<: *typebot-common
     image: baptistearno/typebot-viewer:latest
     ports:
       - '8081:3000'
+    environment:
+      - GITHUB_CLIENT_ID=your_github_client_id
+      - GITHUB_CLIENT_SECRET=your_github_client_secret
 
 networks:
   typebot-network:
